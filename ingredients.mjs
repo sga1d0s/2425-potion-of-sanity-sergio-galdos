@@ -1,6 +1,7 @@
 // importar clase 'Ingredient'
 import Ingredient from "./ingredient.mjs";
 
+// clase principal
 class Ingredients {
   constructor(ingredients) {
     this.ingredients = ingredients

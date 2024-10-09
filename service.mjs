@@ -12,5 +12,6 @@ const getData = async () => {
     throw new Error("Error al obtener los datos")
   }
 }
+
 export {getData};
 // export default getData;

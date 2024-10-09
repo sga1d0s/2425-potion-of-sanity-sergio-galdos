@@ -3,7 +3,7 @@ import { getData } from "./service.mjs";
 import Ingredients from "./ingredients.mjs";
 import Cauldron from "./cauldron.mjs";
 
-// funcion principal
+// función principal
 const execute = async () => {
   try {
     const data = await getData();
@@ -11,7 +11,10 @@ const execute = async () => {
     // crear los ingredientes
     const ingredients = Ingredients.load(data);
 
-    console.log(ingredients);
+    // console.log(ingredients);
+
+    // mostrar todos los ingredientes y sus efectos
+    showIngredients(ingredients);
 
     // crear caldero de pociones
     const cauldron = new Cauldron(ingredients)
@@ -29,17 +32,32 @@ const execute = async () => {
     const potion4 = cauldron.createPotion("Nightshade", "Ectoplasm");
     showPotion(potion4);
 
-    function showPotion(potion) {
-      console.log(`${potion.name.toUpperCase()}`);
-      console.log(`Value:           ${potion.value}`);
-      console.log(`Weight:            ${potion.weight}`);
-      console.log(`Time:            ${potion.time}`);
-      console.log(`-------------------------------`);
-    }
-
   } catch (error) {
     console.error("Error al crear ingredientes");
   }
+}
+
+function showPotion(potion) {
+  console.log(`${potion.name.toUpperCase()}`);
+  console.log(`Value:           ${potion.value}`);
+  console.log(`Weight:          ${potion.weight}`);
+  console.log(`Time:            ${potion.time}`);
+  console.log(`-------------------------------`);
+}
+
+function showIngredients(ingredients) {
+  console.log("Lista de Ingredientes y sus Efectos:");
+
+  // Iteramos sobre el array de ingredientes
+  ingredients.ingredients.forEach(ingredient => {
+    console.log(`Ingrediente: ${ingredient.name}`);
+
+    // Iteramos sobre los efectos de cada ingrediente
+    ingredient.effects.forEach((effect, index) => {
+      console.log(`Efecto ${index + 1}: ${effect}`);
+    });
+    console.log('-------------------------');
+  });
 }
 
 execute();
