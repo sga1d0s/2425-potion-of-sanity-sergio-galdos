@@ -9,6 +9,7 @@ const getData = async () => {
     return result.json();
   } catch (error) {
     console.log(error.message);
+    throw new Error("Error al obtener los datos")
   }
 }
 export {getData};

@@ -11,4 +11,5 @@ class Ingredients {
     return new Ingredients(data.ingredients.map(Ingredient.from))
   }
 }
+
 export default Ingredients

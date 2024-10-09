@@ -6,7 +6,7 @@ class Effect {
     this.type = type;
   }
 
-  // factoría static que crea un nuevo efecto a partir del nombre
+  // factoría que crea un nuevo efecto a partir del nombre
   static from(name) {
     return new Effect(
       name,
