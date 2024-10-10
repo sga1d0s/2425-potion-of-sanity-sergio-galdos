@@ -4,13 +4,14 @@ import Potion from "./potion.mjs";
 class Cauldron {
   // constructor
   constructor(ingredients) {
-    this.ingredients = ingredients.ingredients; // Accede directamente al arreglo de ingredientes
+    // accede directamente al array de ingredientes
+    this.ingredients = ingredients.ingredients; 
   }
 
   // factoria que crea las pociones
   createPotion(ingredient_name1, ingredient_name2) {
     
-    // Busca los ingredientes usando una función de predicado
+    // buscar los ingredientes usando una función de predicado
     const ingredient1 = this.ingredients.find(ingredient => ingredient.name === ingredient_name1);
     const ingredient2 = this.ingredients.find(ingredient => ingredient.name === ingredient_name2);
 

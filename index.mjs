@@ -11,10 +11,8 @@ const execute = async () => {
     // crear los ingredientes
     const ingredients = Ingredients.load(data);
 
-    // console.log(ingredients);
-
     // mostrar todos los ingredientes y sus efectos
-    // showIngredients(ingredients);
+    showIngredients(ingredients);
 
     // crear caldero de pociones
     const cauldron = new Cauldron(ingredients)
