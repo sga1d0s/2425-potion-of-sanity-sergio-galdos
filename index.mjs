@@ -14,7 +14,7 @@ const execute = async () => {
     // console.log(ingredients);
 
     // mostrar todos los ingredientes y sus efectos
-    showIngredients(ingredients);
+    // showIngredients(ingredients);
 
     // crear caldero de pociones
     const cauldron = new Cauldron(ingredients)
@@ -34,6 +34,7 @@ const execute = async () => {
 
   } catch (error) {
     console.error("Error al crear ingredientes");
+    console.log(error.message)
   }
 }
 
